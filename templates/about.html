@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container m-3">
+    <h3>What is this?</h3>
+    <h5> This is an airpline detector which targeted to recognize planes on a picture/video </h5>
+    </br>
+    <div class="row justify-content-center">
+        <div class="card" style="width: 20rem;">
+            <div class="card-header">
+                Main steps to detect an airplane
+            </div>
+            <ol class="list-group list-group-flush">
+                <li class="list-group-item">Load your image (.jpeg) or video (.mp4)</li>
+                <li class="list-group-item">Press the button and wait until file will be processed</li>
+                <li class="list-group-item">When image - after processing an image will be exposed below</li>
+                <li class="list-group-item">When video - after processing a video will be downloaded automatically</li>
+            </ol>
+        </div>
+    </div>
+</div>
+{% endblock %}

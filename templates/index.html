@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container m-5">
+    <form action="" method="post" enctype="multipart/form-data" id="upload-form">
+         <div class="row justify-content-center">
+                <div class="col-sm-3">
+                     <div class="custom-file">
+                        <input type="file" class="custom-file-input" name="image" id="imageFile">
+                        <label class="custom-file-label" for="imageFile">Choose image</label>
+                    </div>
+                    <input type="submit" id="submit-button" class="btn btn-primary my-3" value="Detect Objects in Image" disabled>
+                </div>
+         <div class="col-sm-3">
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" name="video" id="videoFile">
+                    <label class="custom-file-label" for="videoFile">Choose video</label>
+                </div>
+                <input type="submit" id="submit-video-button" class="btn btn-primary my-3" value="Detect Objects in Video" disabled>
+         </div>
+        </div>
+    </form>
+
+    {% if file_exists %}
+        {% if file_type == 'image' %}
+            <img src="{{ file_url }}" class="mr-3" alt="Processed Image">
+        {% endif %}
+    {% endif %}
+</div>
+
+    <script type="text/javascript">
+        var detectImageUrl = "{{ url_for('detect_image') }}";
+        var detectVideoUrl = "{{ url_for('detect_video') }}";
+    </script>
+    <script src="static/handler.js"></script>
+{% endblock %}

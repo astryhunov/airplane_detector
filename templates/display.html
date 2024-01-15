@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <form action="{{ url_for('detect') }}" method="post" enctype="multipart/form-data">
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" name="image" id="customFile">
+            <label class="custom-file-label" for="customFile">Choose file</label>
+          </div>
+        <input type="submit" class="btn btn-primary" value="Detect Objects">
+    </form>
+</div>
+{% endblock %}
